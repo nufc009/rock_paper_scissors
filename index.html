@@ -4,54 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-</head>
+    </head>
 <body>
 
+    <h1>Rock, Paper, Scissors</h1>
 
-<script>
-    
-    function getComputerChoice() {
-   
-        let choice = ['rock', 'paper', 'scissors']; 
-        return choice[(Math.floor(Math.random() * choice.length))];
-
-    }
-
-    function playRound(playerSelection, computerSelection) {
-
-        playerSelection;
-        computerSelection = getComputerChoice();
-        
-            if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
-            (playerSelection == 'paper' && computerSelection == 'rock') || 
-            (playerSelection == 'scissors' && computerSelection == 'paper')) {
-            
-                return ('You Win! ' + playerSelection + ' beats ' + computerSelection);
-                        
-            } else if (playerSelection == computerSelection) {
-
-                return ('Its a tie. You both chose ' + playerSelection);
-
-            } else if
-            
-            ((playerSelection == 'scissors' && computerSelection == 'rock') ||
-            (playerSelection == 'rock' && computerSelection == 'paper') || 
-            (playerSelection == 'paper' && computerSelection == 'scissors')) {
-
-                return ('You lose! ' + computerSelection + ' beats ' + playerSelection);
-
-            }
-        }
-        
-        /* commented out hard coded options
-
-        console.log(playRound('rock', 'computerSelection'));
-        console.log(playRound('scissors', 'computerSelection'));
-        console.log(playRound('paper', 'computerSelection'));
-        console.log(playRound('scissors', 'computerSelection'));
-        console.log(playRound('rock', 'computerSelection'));*/               
-     
-</script>
-    
+    <script src="app.js"></script>
+  
 </body>
 </html>
