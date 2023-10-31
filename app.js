@@ -41,8 +41,28 @@ scissorButton.addEventListener('click', clickListener);
             
             } else if (playerSelection === computerSelection) {
                 tiedRounds();
+            }
+
+            if (playerWins === 5) {
+                
+                phrase.textContent = 'YOU DEFEATED THE COMPUTER';
+                document.getElementById('phrase').style.color = 'green';
+                gameOver();
+
+            } else if (computerWins === 5) {
+                
+                phrase.textContent = 'YOU HAVE BEEN DEFEATED BY THE COMPUTER';
+                document.getElementById('phrase').style.color = 'red';
+                gameOver();
+
+            } else if (tieWins === 5) {
+
+                phrase.textContent = 'THIS GAME IS A TIE!';
+                document.getElementById('phrase').style.color = 'orange';
+                gameOver();
 
             }
+
         }
 
         function playerWin() {
@@ -50,10 +70,6 @@ scissorButton.addEventListener('click', clickListener);
             playerScore.texContent = 'Player Score: ' + playerWins;
             let phrase = document.getElementById('phrase')
             phrase.textContent = 'You win this round!'
-
-            if (playerWins === 5) {
-                phrase.textContent = 'YOU DEFEATED THE COMPUTER';
-            }
         }
 
         function computerWin() {
@@ -61,10 +77,6 @@ scissorButton.addEventListener('click', clickListener);
             computerScore.textContent = 'Computer Score: ' + computerWins;
             let phrase = document.getElementById('phrase')
             phrase.textContent = 'The Computer wins this round'
-
-            if (computerWins === 5) {
-                phrase.textContent = 'YOU HAVE BEEN DEFEATED BY THE COMPUTER';
-            }
         }
 
         function tiedRounds() {
@@ -72,10 +84,23 @@ scissorButton.addEventListener('click', clickListener);
             tieScore.textContent = 'Tied Rounds: ' + tieWins;
             let phrase = document.getElementById('phrase')
             phrase.textContent = 'This round is a tie!'
+        }
 
-            if (tieWins === 5) {
-                phrase.textContent = 'THIS GAME IS A TIE!';
-            }
+        function resetGlobalVariables() {
+            
+            playerWins = 0;
+            computerWins = 0;
+            tieWins = 0;
+        }
+
+        function gameOver() {
+
+            rockButton.removeEventListener('click', clickListener);
+            paperButton.removeEventListener('click', clickListener);
+            scissorButton.removeEventListener('click', clickListener);
+
+            resetGlobalVariables();
+
         }
 
     
