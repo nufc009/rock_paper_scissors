@@ -33,10 +33,10 @@ scissorButton.addEventListener('click', clickListener);
                  
         computerSelection = getComputerChoice();
         
-            if (playerSelection == 'rock' && computerSelection == 'scissors' || playerSelection == 'paper' && computerSelection == 'rock' || playerSelection == 'scissors' && computerSelection == 'paper') {
+            if (playerSelection == 'rock' && computerSelection == 'scissor' || playerSelection == 'paper' && computerSelection == 'rock' || playerSelection == 'scissor' && computerSelection == 'paper') {
                 playerWin();
                       
-            } else if (playerSelection == 'scissors' && computerSelection == 'rock' || playerSelection == 'rock' && computerSelection == 'paper' || playerSelection == 'paper' && computerSelection == 'scissors') {
+            } else if (playerSelection == 'scissor' && computerSelection == 'rock' || playerSelection == 'rock' && computerSelection == 'paper' || playerSelection == 'paper' && computerSelection == 'scissor') {
                 computerWin();
             
             } else if (playerSelection === computerSelection) {
@@ -67,7 +67,7 @@ scissorButton.addEventListener('click', clickListener);
 
         function playerWin() {
             ++playerWins;
-            playerScore.texContent = 'Player Score: ' + playerWins;
+            playerScore.textContent = 'Player Score: ' + playerWins;
             let phrase = document.getElementById('phrase')
             phrase.textContent = 'You win this round!'
         }
